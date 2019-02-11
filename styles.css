@@ -1,0 +1,90 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(to right, #003366 0%, #99ccff 100%);
+}
+
+/*body {
+	height: 100vh;
+	display: flex;
+}*/
+
+.cards-container {
+	display: flex;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 1em;
+	background: rgb(238,238,238);
+	background: linear-gradient(0deg, rgba(238,238,238,1) 0%, rgba(204,204,204,1) 100%);
+	margin: 3em;
+	padding: 2em;
+	perspective: 1000px;
+
+/*	height: 640px;
+	width: 640px;
+	margin:auto;
+	display: flex;
+	flex-wrap: auto;*/	
+}
+
+.card {	
+	background: none;
+	border-radius: 1em;
+	display: flex;
+	justify-content: center;
+	height: 8em;
+
+	/*height: calc(25% - 10px);
+	width: calc(33.333% - 10px);*/
+
+	position: relative;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.4);
+	transform: scale(1);
+	transform-style: preserve-3d;
+	transition: transform .5s;
+}
+
+.card:active {
+	transform: scale(0.97);
+	transition: transfrom .2s;
+}
+
+.card.flip {
+	transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {	
+	background: #ffffcc;
+	border-radius: .25em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;	
+	position: absolute;
+	background: #ffffcc;
+	backface-visibility: hidden;
+}
+
+.card-front {
+	transform: rotateY(180deg);
+}
+
+h1 {
+	background: none;
+}
+
+h2 {
+	background-color: #ffffcc;
+	font-size: 4rem;
+}
+
+.title {
+	display: flex;	
+	color: white;
+	font-family: sans-serif;
+	justify-content: center;
+	margin-top: 1em;
+}
